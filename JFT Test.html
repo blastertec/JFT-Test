@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>JFT Test</title>
+		
+	</head>
+<body>
+	<form
+	<br>
+	<br>
+	16k elements array test
+	<br>
+	<br>
+	<form>
+		<input type="text" id="itemIdInput" placeholder="">
+	    <input type="button" id="showStats" value="Show Item Stats"> 
+	</form>
+	<div id="itemStatsArea"></div>
+		<script type="text/javascript">
+
+			// Generate array of items
+			var allItemsArray = [];
+
+			function makeItemName() {
+  				var text = "";
+  				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+  				for (var i = 0; i < 5; i++) {
+    				text += possible.charAt(Math.floor(Math.random() * possible.length));
+  				}
+
+  				return text;
+			}
+
+			for (var i = 0; i < 16000; i++) {
+				allItemsArray.push({id: i,
+									name: makeItemName(),
+									parameter1: Math.random(),
+									parameter2: Math.random(),
+									parameter3: Math.random(),
+									parameter4: Math.random(),
+									parameter5: Math.random(), 
+									parameter6: Math.random(),
+									parameter7: Math.random(),
+									parameter8: Math.random(),
+									parameter9: Math.random(),
+									parameter10: Math.random(),
+									parameter11: Math.random(),
+									parameter12: Math.random(),
+									parameter13: Math.random(),
+									parameter14: Math.random(),
+									parameter15: Math.random(),
+									parameter16: Math.random(),
+									parameter17: Math.random(),
+									parameter18: Math.random(),
+									parameter19: Math.random(),
+									parameter20: Math.random(),
+									parameter21: Math.random(),
+									parameter22: Math.random(),
+									parameter23: Math.random(),
+									parameter24: Math.random(),
+									parameter25: Math.random(),
+									parameter26: Math.random(),
+									parameter27: Math.random(),
+									parameter28: Math.random(),
+									parameter29: Math.random(),
+									parameter30: Math.random(),
+									parameter31: Math.random(),
+									parameter32: Math.random(),
+									parameter33: Math.random(),
+									parameter34: Math.random(),
+									parameter35: Math.random(),
+									parameter36: Math.random(),
+									parameter37: Math.random(),
+									parameter38: Math.random(),
+									parameter39: Math.random(),
+									parameter40: Math.random()}
+									);
+			}; 
+			console.log(allItemsArray);
+
+			// Handle item id input and display item stats 
+			var button = document.getElementById("showStats");
+			button.onclick = handleButton;
+
+
+			function handleButton() {
+				var itemIdInput = document.getElementById("itemIdInput");
+				var itemId = itemIdInput.value;
+
+				var itemStatsArea = document.getElementById("itemStatsArea");
+				itemStatsArea.innerHTML = JSON.stringify(allItemsArray[itemId], null, '\t'); 
+			}
+
+
+		</script>
+</body>
+</html>
